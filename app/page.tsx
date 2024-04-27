@@ -1,3 +1,8 @@
+'use client'
+
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { MessageCircle } from "lucide-react";
+
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Reasons from "@/components/reasons";
@@ -7,15 +12,29 @@ import Testimonial from "@/components/testimonial";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { MessageCircle } from "lucide-react";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll()
+  const borderRadius = useTransform(scrollYProgress, [0, 0.15], ['1000px', '0px'])
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
 
-      <section className="min-h-[80vh] w-full bg-main bg-center bg-cover">
-        <div className="h-[80vh] w-full px-10 bg-gradient-to-br from-black from-5% to-transparent text-white flex flex-col align-center justify-center md:px-[20%]">
+      <motion.section
+        style={{
+          borderBottomLeftRadius: borderRadius,
+          borderBottomRightRadius: borderRadius,
+        }}
+        className="min-h-[80vh] w-full bg-main bg-center bg-cover"
+      >
+        <motion.div
+          style={{
+            borderBottomLeftRadius: borderRadius,
+            borderBottomRightRadius: borderRadius,
+          }}
+          className="h-[80vh] w-full px-10 bg-gradient-to-br from-black from-5% to-transparent text-white flex flex-col align-center justify-center md:px-[20%]"
+        >
           <h1 className="max-w-[400px] text-3xl font-bold md:text-5xl">Get help from the expert consultants</h1>
           <p className="max-w-[400px] mt-8 text-white/70 leading-1">
             With lots of unique blocks, you can easily
@@ -23,8 +42,8 @@ export default function Home() {
             consultancy website within few minutes.
           </p>
           <Button className="w-fit text-md font-bold mt-8" size="lg">Get started now</Button>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       <section className="w-full py-16 flex flex-col space-y-16 align-center justify-between px-[20%] lg:flex-row lg:py-28 lg:space-y-0">
         <Stat title="1M+" description="Customers visit Wave every month" />
@@ -36,7 +55,7 @@ export default function Home() {
         <Stat title="4.9" description="Average customer ratings out of 5.00!" />
       </section>
 
-      <div className="my-4 h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent w-full" />
+      <div className="h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent w-full" />
 
       <section className="w-full px-8 lg:px-[20%] mt-14">
         <h1 className="text-3xl font-bold text-center">Services we offer for you</h1>
@@ -107,7 +126,7 @@ export default function Home() {
             <div className="size-16 rounded-full bg-blue-100/10 flex align-center justify-center">
               <MessageCircle className="text-blue-500 fill-blue-500 my-auto size-8" />
             </div>
-            <h1 className="text-3xl text-white font-bold mt-14 mb-8">Get a free consultancy frmo our expert right now!</h1>
+            <h1 className="text-3xl text-white font-bold mt-14 mb-8">Get a free consultancy from our expert right now!</h1>
             <p className="text-white/50">With lots of unique blocks, you can easily build a page without coding. Build your next landing page so quickly with Albino.</p>
           </div>
           <div className="my-10 md:w-[50%] md:my-auto">

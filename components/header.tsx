@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MenuIcon } from "lucide-react";
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 import { Button } from "./ui/button";
 import useMediaQuery from "@/app/hooks/use-media-query";
@@ -50,9 +50,17 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const isDesktop = useMediaQuery('(min-width: 768px)')
 
+  const { scrollYProgress } = useScroll()
+  const filter = useTransform(scrollYProgress, [0, 0.1], ['blur(0px) opacity(0) brightness(100%)', 'blur(15px) opacity(1) brightness(60%)'])
+  const translateY = useTransform(scrollYProgress, [0.9, 1], [0, -100])
+
   return (
-    <header
-      className="flex min-w-full p-4 align-center justify-between absolute md:px-12"
+    <motion.header
+      style={{
+        backdropFilter: filter,
+        y: translateY
+      }}
+      className="fixed flex min-w-full p-4 align-center justify-between md:px-12"
     >
       <motion.div
         initial={false}
@@ -78,7 +86,7 @@ function Header() {
         />
       </motion.div>
       <Button size="lg" className="text-md font-bold">Get started now</Button>
-    </header>
+    </motion.header>
   )
 }
 
