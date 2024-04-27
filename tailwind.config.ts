@@ -73,7 +73,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'main': "url('/main-bg.png')",
+        'main': "url('/main-bg.webp')",
         'background-svg': "url('/background.svg')",
       }
     },
