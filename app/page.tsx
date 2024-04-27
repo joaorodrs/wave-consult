@@ -19,13 +19,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-28 flex align-center justify-between px-[20%]">
+      <section className="w-full py-16 flex flex-col space-y-16 align-center justify-between px-[20%] lg:flex-row lg:py-28 lg:space-y-0">
         <Stat title="1M+" description="Customers visit Wave every month" />
-        <Stat title="93%" description="Satisfaction rate from our customers." />
+        <Stat
+          title="93%"
+          description="Satisfaction rate from our customers."
+          className="flex-row-reverse lg:flex-row"
+        />
         <Stat title="4.9" description="Average customer ratings out of 5.00!" />
       </section>
 
       <div className="my-4 h-[1px] bg-gradient-to-r from-transparent via-slate-300 via-40% to-transparent w-full" />
+
+      <section className="w-full px-8 md:px-[20%] mt-14">
+        <h1 className="text-3xl font-bold text-center">Services we offer for you</h1>
+        <h2 className="text-center text-black/60 mt-4 text-md mx-auto max-w-[400px]">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</h2>
+      </section>
     </main>
   );
 }
