@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Reasons from "@/components/reasons";
 import ServiceCard from "@/components/service-card";
@@ -109,7 +110,7 @@ export default function Home() {
             <h1 className="text-3xl text-white font-bold mt-14 mb-8">Get a free consultancy frmo our expert right now!</h1>
             <p className="text-white/50">With lots of unique blocks, you can easily build a page without coding. Build your next landing page so quickly with Albino.</p>
           </div>
-          <div className="my-auto mt-10 md:w-[50%] md:mt-auto">
+          <div className="my-10 md:w-[50%] md:my-auto">
             <div className="bg-white mx-auto w-[300px] rounded-xl p-5">
               <Label htmlFor="name">Name</Label>
               <Input id="name" placeholder="Josh Doe" className="mb-4" />
@@ -117,11 +118,13 @@ export default function Home() {
               <Input id="email" placeholder="josh@email.com" className="mb-4" />
               <Label htmlFor="phone">Phone</Label>
               <Input id="phone" placeholder="(12) 91234-5678" />
-              <Button className="w-full mt-4">Get Free Consultancy</Button>
+              <Button className="w-full mt-6 font-bold text-md">Get Free Consultancy</Button>
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }
