@@ -1,4 +1,6 @@
+
 import Header from "@/components/header";
+import ServiceCard from "@/components/service-card";
 import Stat from "@/components/stat";
 import { Button } from "@/components/ui/button";
 
@@ -15,7 +17,7 @@ export default function Home() {
             build a page without coding. Build your next
             consultancy website within few minutes.
           </p>
-          <Button className="w-fit text-md font-bold mt-4" size="lg">Get started now</Button>
+          <Button className="w-fit text-md font-bold mt-8" size="lg">Get started now</Button>
         </div>
       </section>
 
@@ -29,11 +31,18 @@ export default function Home() {
         <Stat title="4.9" description="Average customer ratings out of 5.00!" />
       </section>
 
-      <div className="my-4 h-[1px] bg-gradient-to-r from-transparent via-slate-300 via-40% to-transparent w-full" />
+      <div className="my-4 h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent w-full" />
 
       <section className="w-full px-8 md:px-[20%] mt-14">
         <h1 className="text-3xl font-bold text-center">Services we offer for you</h1>
         <h2 className="text-center text-black/60 mt-4 text-md mx-auto max-w-[400px]">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</h2>
+
+        <div className="my-20 flex align-center justify-between">
+          <ServiceCard src="/digital-marketing.png" title="Digital Marketing" />
+          <ServiceCard src="/content-writing.png" title="Content Writing" />
+          <ServiceCard src="/graphic-design.png" title="Graphic Design" />
+          <ServiceCard src="/seo-for-business.png" title="SEO for Business" />
+        </div>
       </section>
     </main>
   );
