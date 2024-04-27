@@ -48,7 +48,7 @@ const nav = {
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const isDesktop = useMediaQuery('(min-width: 568px)')
+  const isDesktop = useMediaQuery('(min-width: 768px)')
 
   return (
     <header
