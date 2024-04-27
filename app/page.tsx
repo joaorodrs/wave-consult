@@ -1,8 +1,8 @@
-
 import Header from "@/components/header";
 import Reasons from "@/components/reasons";
 import ServiceCard from "@/components/service-card";
 import Stat from "@/components/stat";
+import Testimonial from "@/components/testimonial";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -65,6 +65,36 @@ export default function Home() {
             <Reasons title="Get Your Results" n={3} />
           </div>
         </div>
+      </section>
+
+      <div className="w-full bg-blue-600 py-10">
+        <h1 className="text-white text-center flex justify-center">
+          <div className="bg-white text-blue-500 font-bold rounded-full px-2 mr-2">
+            NEW
+          </div>
+          We’ve added a new exciting feature in v3.0. Get it now for $49.
+        </h1>
+      </div>
+
+      <section className="w-full flex overflow-x-auto justify-between space-x-4 px-10 py-20 lg:px-[20%]">
+        <Testimonial
+          src="/amazon.svg"
+          quote="You made it so simple. My new site is so much faster & easier to work with Albino."
+          name="Ilya Vasin"
+          title="Software Engineer"
+        />
+        <Testimonial
+          src="/google.svg"
+          quote="Must have book for students, who want to be a great Product Designer."
+          name="Mariano Rasg"
+          title="Software Engineer"
+        />
+        <Testimonial
+          src="/amazon.svg"
+          quote="You made it so simple. My new site is so much faster & easier to work with Albino."
+          name="Oka Tomoaki"
+          title="Software Engineer"
+        />
       </section>
     </main>
   );
