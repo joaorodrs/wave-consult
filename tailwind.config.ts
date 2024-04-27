@@ -74,6 +74,7 @@ const config = {
       },
       backgroundImage: {
         'main': "url('/main-bg.png')",
+        'background-svg': "url('/background.svg')",
       }
     },
   },

@@ -4,6 +4,9 @@ import ServiceCard from "@/components/service-card";
 import Stat from "@/components/stat";
 import Testimonial from "@/components/testimonial";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { MessageCircle } from "lucide-react";
 
 export default function Home() {
   return (
@@ -67,9 +70,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w-full bg-blue-600 py-10">
-        <h1 className="text-white text-center flex justify-center">
-          <div className="bg-white text-blue-500 font-bold rounded-full px-2 mr-2">
+      <div className="w-full bg-blue-600 py-10 px-10 md:px-0">
+        <h1 className="text-white text-center flex flex-col justify-center align-center md:flex-row">
+          <div className="bg-white text-blue-500 mb-4 font-bold rounded-full px-2 mr-2 md:mb-0">
             NEW
           </div>
           We’ve added a new exciting feature in v3.0. Get it now for $49.
@@ -95,6 +98,29 @@ export default function Home() {
           name="Oka Tomoaki"
           title="Software Engineer"
         />
+      </section>
+
+      <section className="w-full min-h-[60vh] bg-slate-900 md:h-[60vh]">
+        <div className="size-full bg-background-svg flex flex-col align-center justify-between px-10 md:px-[20%] md:flex-row">
+          <div className="flex flex-col my-auto mt-16 md:w-[50%] md:mt-auto">
+            <div className="size-16 rounded-full bg-blue-100/10 flex align-center justify-center">
+              <MessageCircle className="text-blue-500 fill-blue-500 my-auto size-8" />
+            </div>
+            <h1 className="text-3xl text-white font-bold mt-14 mb-8">Get a free consultancy frmo our expert right now!</h1>
+            <p className="text-white/50">With lots of unique blocks, you can easily build a page without coding. Build your next landing page so quickly with Albino.</p>
+          </div>
+          <div className="my-auto mt-10 md:w-[50%] md:mt-auto">
+            <div className="bg-white mx-auto w-[300px] rounded-xl p-5">
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" placeholder="Josh Doe" className="mb-4" />
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" placeholder="josh@email.com" className="mb-4" />
+              <Label htmlFor="phone">Phone</Label>
+              <Input id="phone" placeholder="(12) 91234-5678" />
+              <Button className="w-full mt-4">Get Free Consultancy</Button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
